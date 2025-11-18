@@ -1,0 +1,73 @@
+{
+  "users": [
+    {
+      "Uid": 1,
+      "email": "john@example.com",
+      "password": "123456",
+      "display_name": "John Doe"
+    },
+    {
+      "Uid": 2,
+      "email": "sara@example.com",
+      "password": "password",
+      "display_name": "Sara"
+    },
+    {
+      "Uid": 3,
+      "email": "mike@example.com",
+      "password": "qwerty",
+      "display_name": "Mike"
+    }
+  ],
+
+  "posts": [
+    {
+      "Pid": 1,
+      "Uid": 1,
+      "body": "Hello world! This is my first post 🎉",
+      "likesCount": 5,
+      "imgUrl": "images.jpeg"
+    },
+    {
+      "Pid": 2,
+      "Uid": 2,
+      "body": "Loving this new platform!",
+      "likesCount": 2,
+      "imgUrl": "images.jpeg"
+    },
+    {
+      "Pid": 3,
+      "Uid": 3,
+      "body": "Beautiful day today 🌞",
+      "likesCount": 7,
+      "imgUrl": "images.jpeg"
+    }
+  ],
+
+  "comments": [
+    {
+      "Cid": 1,
+      "Pid": 1,
+      "Uid": 2,
+      "content": "Congrats on your first post!"
+    },
+    {
+      "Cid": 2,
+      "Pid": 1,
+      "Uid": 3,
+      "content": "Welcome!"
+    },
+    {
+      "Cid": 3,
+      "Pid": 2,
+      "Uid": 1,
+      "content": "Glad you like it 😊"
+    },
+    {
+      "Cid": 4,
+      "Pid": 3,
+      "Uid": 1,
+      "content": "Yes, the weather is amazing!"
+    }
+  ]
+}

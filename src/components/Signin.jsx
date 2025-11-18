@@ -1,12 +1,14 @@
 /** @format */
 
 import React, { useState } from "react";
+import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router";
 
 function Signin() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -27,7 +29,10 @@ function Signin() {
 
         if (data[0].password === password) {
           alert(`Welcome back, ${data[0].display_name} ...`);
+          dispatch({ type: "connect_user", payload: data[0] });
           navigate("/");
+        } else {
+          alert("User email or password incorrect ...");
         }
       });
   };

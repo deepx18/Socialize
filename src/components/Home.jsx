@@ -1,12 +1,14 @@
 /** @format */
 
-import React, { useEffect, useState } from "react";
+/* eslint-disable react-hooks/exhaustive-deps */
+import React, { useEffect, useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router";
 
 function Home() {
   const [posts, setPosts] = useState([]);
   const currentUser = useSelector((state) => state.currentUser);
+  const userdiv = useRef(null);
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
@@ -16,15 +18,22 @@ function Home() {
     fetch("http://localhost:8000/posts")
       .then((res) => res.json())
       .then((data) => setPosts(data));
-  }, []);
+  }, [currentUser]);
 
   const handleLogOut = () => {
     dispatch({ type: "logout_user" });
-    navigate("/sign-in");
+  };
+
+  const handleUserInfosShow = () => {
+    userdiv.current.style.display =
+      userdiv.current.style.display === "none" ? "block" : "none";
+  };
+  const handleUserInfosHide = () => {
+    userdiv.current.style.display = "none";
   };
 
   return (
-    <>
+    <div>
       {/* NavBar */}
       <nav>
         <a href="/">
@@ -41,18 +50,30 @@ function Home() {
             <a href="">images</a>
           </li>
         </ul>
-        <div className="actions">
-          <button>Post</button>
-          <button onClick={handleLogOut}>Log-out</button>
+
+        <div className="user">
+          <img
+            src="user.png"
+            alt="user image"
+            onClick={handleUserInfosShow}
+            // onMouseLeave={handleUserInfosHide}
+          />
+          <div className="user_infos" ref={userdiv}>
+            <p>{currentUser?.display_name}</p>
+            <div className="actions">
+              <button>Post</button>
+              <button onClick={handleLogOut}>Log-out</button>
+            </div>
+          </div>
         </div>
       </nav>
 
       {/* Feed */}
-      <main>
+      <main onClick={handleUserInfosHide}>
         <div className="posts">
           {posts.map((p) => {
             return (
-              <article className="post">
+              <article className="post" key={p.Pid}>
                 <div className="infos">
                   <h3>user name</h3>
                   <p>{p.body}</p>
@@ -72,7 +93,7 @@ function Home() {
           })}
         </div>
       </main>
-    </>
+    </div>
   );
 }
 

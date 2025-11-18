@@ -1,6 +1,6 @@
 /** @format */
 
-import React, { useState } from "react";
+import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router";
 
@@ -39,7 +39,8 @@ function Signin() {
 
   return (
     <>
-      <div className="sign-in_form">
+      {/* Sign-In Form */}
+      <div className="sign_form">
         <form onSubmit={handleSubmit}>
           <label htmlFor="email">Your email</label>
           <input
@@ -55,6 +56,9 @@ function Signin() {
             onChange={(e) => setPassword(e.target.value.trim())}
             placeholder="••••••••"
           />
+          <p>
+            You don't have an account? <a href="/sign-up">Create account</a>
+          </p>
           <button type="submit">Submit</button>
         </form>
       </div>

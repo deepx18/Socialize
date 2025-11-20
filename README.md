@@ -1,16 +1,116 @@
-# React + Vite
+<!-- @format -->
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# 🌐 Socialize
 
-Currently, two official plugins are available:
+**Socialize** is a simple social media platform where users can register, log in, and view posts from others.
+A post can be just text, or text combined with an image.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## 🔧 Prerequisites
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+![Node](https://img.shields.io/badge/Node.js-%3E%3D16-green)
+![NPM](https://img.shields.io/badge/NPM-Required-blue)
+![React](https://img.shields.io/badge/React-18+-61dafb)
+![Redux](https://img.shields.io/badge/Redux-Required-764abc)
+![ReactRouter](https://img.shields.io/badge/React%20Router-Required-CA4245)
+![JSONServer](https://img.shields.io/badge/JSON%20Server-Required-black)
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 📸 Screenshot - App Preview
+
+![App Screenshot](./readme-files/preview.png)
+
+---
+
+## 🎥 Video Overview
+
+![Demo Video](./readme-files/overview.gif)
+
+---
+
+## ✨ Features
+
+- 🧑‍💻 User registration and login
+- 📝 Create simple text posts
+- 🖼️ Create posts with images
+- 👀 View posts from other users
+- 🚀 Clean React structure for easy modification
+
+---
+
+## 🛠️ Tech Stack
+
+- **React.js**
+- **React Router**
+- **Redux**
+- **CSS**
+- **Json-Server as DB**
+- **imgBB as a cloud server for images**
+
+---
+
+## 📦 Installation
+
+```bash
+git clone https://github.com/yourusername/socialize.git
+cd socialize
+npm install
+```
+
+---
+
+## ▶️ Run the App
+
+```bash
+npm run dev
+npx json-server .\src\database\db.json --port PORT
+```
+
+---
+
+## 📁 Project Structure
+
+```
+src/
+  components/
+    Home.jsx
+    Signin.jsx
+    Signup.jsx
+  database/
+    db.json
+  redux-files/
+    store.js
+  App.jsx
+  App.css
+  main.jsx
+  index.css
+```
+
+---
+
+## 📡 API Endpoints
+
+| Method | Endpoint     | Description       |
+| ------ | ------------ | ----------------- |
+| GET    | /users       | Get all users     |
+| POST   | /users       | Register new user |
+| DELETE | /users?id=id | Delete a post     |
+| GET    | /posts       | Get all posts     |
+| POST   | /posts       | Create a post     |
+| DELETE | /posts?id=id | Delete a post     |
+
+---
+
+## 🚀 Deployment
+
+You can deploy Socialize using **Vercel**, **Netlify**, or **GitHub Pages**.
+
+---
+
+## 📄 License
+
+This project is licensed under the MIT License.
+
+---

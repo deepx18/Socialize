@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { useNavigate } from "react-router";
+import { Link, useNavigate } from "react-router";
 
 function Signup() {
   const [email, setEmail] = useState("");
@@ -82,8 +82,8 @@ function Signup() {
             placeholder="••••••••"
           />
           <p>
-            You already have an account?{" "}
-            <a href="/sign-in">Sign-in to you account</a>
+            You already have an account?
+            <Link to="/sign-in">Sign-in to you account</Link>
           </p>
           <button type="submit">Submit</button>
         </form>

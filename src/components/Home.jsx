@@ -1,7 +1,6 @@
 /** @format */
 
 /* eslint-disable react-hooks/exhaustive-deps */
-import md5 from "blueimp-md5";
 import { useEffect, useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router";
@@ -39,6 +38,7 @@ function Home() {
   };
 
   const handleFileChange = (e) => {
+    console.log(e.target.files);
     if (e.target.files && e.target.files[0]) {
       setPostImage(e.target.files[0]);
     }
@@ -57,15 +57,16 @@ function Home() {
 
   const addPost = async (e) => {
     e.preventDefault();
-    console.log(e);
 
     if (!newPost) {
       alert("You should type something ...");
       return;
     }
 
-    const fileName = md5(Date.now());
-    console.log(fileName);
+    if (postImage.size >= 36700160) {
+      alert("The image size is too big, maximale size allowed is 35.0 Mb ...");
+      return;
+    }
 
     const formData = new FormData();
     formData.append("image", postImage);
@@ -74,7 +75,7 @@ function Home() {
     if (postImage) {
       try {
         await fetch(
-          `https://api.imgbb.com/1/upload?key=d002c89967bf0505f638b1c53346306e&name=${fileName}`,
+          `https://api.imgbb.com/1/upload?key=d002c89967bf0505f638b1c53346306e`,
           {
             method: "POST",
             body: formData,

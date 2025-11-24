@@ -22,8 +22,21 @@ function Home() {
 
     fetch("http://localhost:8000/posts?_sort=Pid&_order=desc")
       .then((res) => res.json())
-      .then((data) => setPosts(data));
+      .then((data) => setPosts(data.reverse()));
   }, [currentUser, reload]);
+
+  const likePost = (post) => {
+    post.likesCount++;
+    fetch(`http://localhost:8000/posts/${post.id}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json; charset=UTF-8",
+      },
+      body: JSON.stringify(post),
+    }).then((res) => {
+      if (res.ok) setReload(reload + 1);
+    });
+  };
 
   const handleLogOut = () => {
     dispatch({ type: "logout_user" });
@@ -33,6 +46,7 @@ function Home() {
     userdiv.current.style.display =
       userdiv.current.style.display === "none" ? "block" : "none";
   };
+
   const handleUserInfosHide = () => {
     userdiv.current.style.display = "none";
   };
@@ -63,7 +77,7 @@ function Home() {
       return;
     }
 
-    if (postImage.size >= 36700160) {
+    if (postImage?.size >= 36700160) {
       alert("The image size is too big, maximale size allowed is 35.0 Mb ...");
       return;
     }
@@ -109,7 +123,7 @@ function Home() {
         Uid: currentUser.Uid,
         body: newPost,
         likesCount: 0,
-        imgUrl: name ? name : "images.jpeg",
+        imgUrl: name ? name : "",
       }),
     }).then((res) => {
       if (res.ok) {
@@ -157,23 +171,27 @@ function Home() {
       {/* Feed */}
       <main onClick={handleUserInfosHide}>
         <div className="posts">
-          {posts.reverse().map((p) => {
+          {posts.map((p) => {
             return (
               <article className="post" key={p.Pid}>
                 <div className="infos">
                   <h3>user name</h3>
                   <p>{p.body}</p>
                 </div>
-                <img src={`${p.imgUrl}`} alt="" />
-                <div className="counts">
-                  <p>Likes {p.likesCount}</p>
-                  <span>|</span>
-                  <p>Comments 0</p>
-                </div>
+                {p.imgUrl && <img src={`${p.imgUrl}`} alt="" />}
+
                 <div className="actions">
-                  <button>Like</button>
-                  <button>Comment</button>
+                  <button onClick={() => likePost(p)}>
+                    Likes {`{${p.likesCount}}`}
+                  </button>
                 </div>
+
+                {/* <div className="counts">
+                  <p>Likes {p.likesCount}</p>
+                  {/* <button>Comment</button>
+                   <span>|</span>
+                  <p>Comments 0</p>
+                </div> */}
               </article>
             );
           })}

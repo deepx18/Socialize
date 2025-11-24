@@ -51,7 +51,7 @@
       "Pid": 1763659677841,
       "Uid": 1763482943566,
       "body": "gha kantabaz",
-      "likesCount": 0,
+      "likesCount": 1,
       "imgUrl": "https://i.ibb.co/q35jqR8x/663294b8632e3258b2b88c192903f08c.jpg"
     },
     {
@@ -59,8 +59,16 @@
       "Pid": 1763666863817,
       "Uid": 1,
       "body": "POST 1",
-      "likesCount": 0,
+      "likesCount": 1,
       "imgUrl": "https://i.ibb.co/Mxb32vCC/t-l-chargement-4.png"
+    },
+    {
+      "id": "5db3",
+      "Pid": 1763942659182,
+      "Uid": 1,
+      "body": "hhhhhhh",
+      "likesCount": 21,
+      "imgUrl": ""
     }
   ],
   "comments": [

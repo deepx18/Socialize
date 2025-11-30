@@ -121,6 +121,7 @@ function Home() {
       body: JSON.stringify({
         Pid: Date.now(),
         Uid: currentUser.Uid,
+        user_name: currentUser.display_name,
         body: newPost,
         likesCount: 0,
         imgUrl: name ? name : "",
@@ -175,7 +176,7 @@ function Home() {
             return (
               <article className="post" key={p.Pid}>
                 <div className="infos">
-                  <h3>user name</h3>
+                  <h3>{p.user_name}</h3>
                   <p>{p.body}</p>
                 </div>
                 {p.imgUrl && <img src={`${p.imgUrl}`} alt="" />}

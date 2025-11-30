@@ -31,44 +31,13 @@
   ],
   "posts": [
     {
-      "id": "5e83",
-      "Pid": 1763653297075,
-      "Uid": 1763482943566,
-      "body": "gha kannnnnnntabbez",
-      "likesCount": 0,
-      "imgUrl": "https://i.ibb.co/nNkhfj93/cef5a95e820a41779fdd2fede0a7152f.jpg"
-    },
-    {
-      "id": "b79f",
-      "Pid": 1763653680905,
-      "Uid": 1763482943566,
-      "body": "gha kantabaz",
-      "likesCount": 0,
-      "imgUrl": "https://i.ibb.co/LXr4yd6R/4af1e06d9967f7f359791a354e341a80.png"
-    },
-    {
-      "id": "b4f5",
-      "Pid": 1763659677841,
-      "Uid": 1763482943566,
-      "body": "gha kantabaz",
-      "likesCount": 1,
-      "imgUrl": "https://i.ibb.co/q35jqR8x/663294b8632e3258b2b88c192903f08c.jpg"
-    },
-    {
-      "id": "e418",
-      "Pid": 1763666863817,
+      "id": "ba2c",
+      "Pid": 1764540020564,
       "Uid": 1,
-      "body": "POST 1",
-      "likesCount": 1,
-      "imgUrl": "https://i.ibb.co/Mxb32vCC/t-l-chargement-4.png"
-    },
-    {
-      "id": "5db3",
-      "Pid": 1763942659182,
-      "Uid": 1,
-      "body": "hhhhhhh",
-      "likesCount": 21,
-      "imgUrl": ""
+      "user_name": "John Doe",
+      "body": "Ghe kantabbez",
+      "likesCount": 14,
+      "imgUrl": "https://i.ibb.co/pjCrTd2S/t-l-chargement.jpg"
     }
   ],
   "comments": [

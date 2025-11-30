@@ -54,7 +54,7 @@ A post can be just text, or text combined with an image.
 ## 📦 Installation
 
 ```bash
-git clone https://github.com/yourusername/socialize.git
+git clone https://github.com/deepx18/socialize.git
 cd socialize
 npm install
 ```
